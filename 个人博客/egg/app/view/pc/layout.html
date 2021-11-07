@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/pc/common.css">
+    <link rel="stylesheet" href="/css/swiper.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <div class="navigation w">
+                <div class="nav-logo">
+                    <img src="/img/pc/logo.png" alt="">
+                </div>
+                <ul class="nav-ul">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/book">学习手册</a>
+                    </li>
+                    <li>
+                        <a href="/blog">个人博客</a>
+                    </li>
+                    <li>
+                        <a href="/res">个人简历</a>
+                    </li>
+                </ul>
+                <div class="search">
+                    <input type="text" placeholder="搜索">
+                    <span class="glyphicon glyphicon-search"></span>
+                </div>
+        </div>
+    </div>
+    <div class="footop">
+        <img src="/img/pc/返回顶部.png" alt="" title="返回顶部">
+    </div>
+    {% block content %} {% endblock %}
+    
+    {% block js %} {% endblock %}
+    
+
+    <script>
+        let path = location.pathname
+        if(path == "/"){
+            $(".nav-ul li").eq(0).addClass("active");
+        }else if(path == "/book"){
+            $(".nav-ul li").eq(1).addClass("active");
+        }else if(path == "/blog"){
+            $(".nav-ul li").eq(2).addClass("active");
+        }else if(path == "/resume"){
+            $(".nav-ul li").eq(3).addClass("active");
+        }
+         var mySwiper = new Swiper ('.swiper-container', {
+            loop: true, // 循环模式选项
+            
+            // 如果需要分页器
+            pagination: {
+            el: '.swiper-pagination',
+            },
+            autoplay: {
+                delay: 1000
+            },
+            // 如果需要前进后退按钮
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+        }) 
+        $(".footop").click(function(){
+            $("html,body").animate({
+                "scrollTop":"0px"
+            },200)
+        })
+        $(window).scroll(function() {
+            if( $(window).scrollTop() > 300){
+                $(".footop").show()
+            }else{
+                $(".footop").hide()
+            }
+         })
+        console.log($(window).scrollTop());
+    </script>
+</body>
+</html>

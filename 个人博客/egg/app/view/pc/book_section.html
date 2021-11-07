@@ -1,0 +1,62 @@
+{% extends "pc/layout.html"%} {% block content%}
+<link rel="stylesheet" href="/css/pc/book_section.css">
+<div class="header w">
+    <div class="header_left">
+        <div class="header_left-top">
+            <img src="{{booktitle.img}}" >
+            <div class="top-right">
+                <h2>{{booktitle.title}}</h2>
+                <div class="html_book">
+                    {{bookaccList.html_text | safe}}
+                </div>
+            </div>
+        </div>
+        <div class="header_left-bottom">
+            <ul>
+                {% for item in chapterList %}
+                <li class="list">  
+                    <div class="list-one">
+                        <img src="/img/pc/下箭头.png" alt="">
+                        <span>{{item.title}}</span>
+                    </div>
+                    <div class="list-for">
+                        {% for section in item.dataValues.sectionList %}
+                        <a href="/section/{{section.id}}">{{section.title}}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="header_boy">
+        {{bookaccList.html_text |safe}}
+    </div>
+    <div class="header_right">
+        {% for book in bookList %}
+        <ul>
+            <li>
+                <a href="/book/{{book.id}}">{{book.title}}</a>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+<div class="bootom_header">
+    更多精彩内容敬请期待
+</div>
+<script>
+    $(".list").click(function(){
+        let src = $(this).find(".list-one img").attr("src");
+        if(src === "/img/pc/下箭头.png"){
+            $(this).find(".list-one img").attr("src","/img/pc/右箭头.png");
+            $(this).find(".list-for").show()
+        }else {
+            $(this).find(".list-one img").attr("src","/img/pc/下箭头.png");
+            $(this).find(".list-for").hide()
+        }
+        
+    })
+   
+</script>
+{% endblock%}

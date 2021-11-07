@@ -1,0 +1,24 @@
+
+    <div class="header-account">
+        <h1>精选</h1>
+       {% for item in bookList %}
+        <div class="header-account-list">
+            <a href="/book/{{item.id}}" class="account-list-a">
+                <img src="{{item.img}}">
+                <div class="account_title">
+                    <p>{{item.title}}</p>
+                    <button>阅读</button>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        {% for item in blogList%}
+        <div class="header-account-list accblog" >
+            <a href="/book/{{item.id}}" class="account-list-a">
+                <div class="account_title">
+                   <p>{{item.title}}</p>
+                </div>
+            </a>
+        </div>
+            {% endfor %}
+    </div>

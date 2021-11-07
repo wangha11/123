@@ -1,0 +1,90 @@
+.header {
+    display: flex;
+    margin-top: 10px;
+}
+.header_left {
+    width: 250px;
+}
+.header_right {
+    width: 150px;
+    /* background: yellow; */
+}
+.header_left-top {
+    display: flex;
+    height: 150px;
+    background: #fff;
+    padding: 15px 0 0 20px;
+}
+.header_left-top img{
+    width: 85px;
+    height: 110px;
+}
+.top-right {
+    margin-left: 10px;
+}
+.top-right>h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.html_book {
+    color: #ccc;
+    font-size: 12px;
+}
+.header_left-bottom { 
+    margin-top: 10px;
+    overflow: hidden;
+    min-height: 450px;
+    
+    background: #fff;
+}
+.header_left-bottom .list {
+    margin-top: 20px;
+    padding-left: 10px;
+}
+.list-one {
+    position: relative;
+}
+.list-one>span {
+    position: absolute;
+    left: 13px;
+   margin-left: 12px;
+}
+.list-for {
+    display: none;
+    margin: 10px  0  0 36px ;
+    color: #666;
+}
+.list-for a {
+    display: block;
+    margin-bottom: 5px;
+}
+.header_boy {
+    width: 840px;
+    margin: 0 10px 30px 10px;
+    min-height: 600px;
+    background: #fff;
+    padding: 15px 0 0 30px;
+}
+.header_right a {
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin: 10px 0;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    line-height: 50px;
+}
+.header_right a:hover {
+    background: rgb(228, 228, 228);
+}
+.bootom_header {
+    margin-top: 10px;
+    line-height: 60px;
+    background: #fff;
+    text-align: center;
+    color: rgb(150, 146, 146);
+}
+.nav-ul li:nth-child(2) {
+    border-bottom:2px solid blue;
+}

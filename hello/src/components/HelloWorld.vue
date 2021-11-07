@@ -1,58 +1,57 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+    <div>
+	<h1>{{mess}}</h1>
+        <ul>
+            <li v-for="stundtv  in stundtList" :key="stundtv.id" >
+				<input type="checkbox" :checked="stundtv.done" />
+	<input type="text" ref="db" :value="stundtv.name" v-if="stundtv.isEnt" @blur="stundPut(stundtv,$event)"/>
+				<span v-else @click="dblclick(stundtv)">{{stundtv.name}}</span>		
+				<button type="button" @click="del(stundtv.id)" >删除</button>
+			</li>
+        </ul>
+        
+    </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+    methods:{
+		del(id){
+			console.log(id);
+			this.$store.dispatch('del',id)
+		}, //双击编辑
+		dblclick(stundtv){
+			stundtv.isEnt = true
+		},//编辑回车
+		stundPut(stu,e){
+			const st =  e.target.value
+			stu.name = st
+			stu.isEnt = false
+		}
+    },
+    computed:{
+        ...mapState(['stundtList']),
+    },
+	data(){
+		return {
+			isent:false,
+		}
+	},
+	props:{
+		mess:String
+	}
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+	button {
+		display: none;
+	}
+	li{
+		margin: 20px;
+	}
+	li:hover button {
+		display: inline-block;
+	}
 </style>

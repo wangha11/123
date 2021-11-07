@@ -1,0 +1,147 @@
+.clear::before,
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: rgb(245, 244, 244) !important;
+}
+.w {
+    width: 1260px;
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+}
+a { 
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+}
+input,button {
+    outline: none;
+}
+.active {
+    border-bottom: 2px solid blue;
+}
+.nav {
+    width: 100%;;
+    background: #fff;
+    height: 60px;
+    
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-logo {
+    line-height: 60px;
+    margin-left: 20px;
+}
+.nav-ul {
+    display: flex;
+}
+.nav-ul li {
+    width: 114px;
+    line-height: 57px;
+    margin-top: 1px;
+    text-align: center;
+    font-size: 15px;
+    color: #666;
+}
+.nav-ul li:hover {
+    border-bottom: 2px solid blue;
+}
+.nav-ul li>a {
+    display: block;
+}
+.search {
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;
+    border:1px solid #ccc;
+}
+.search>input {
+    border: 0;
+    width:260px;
+    height: 100%;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.swiper {
+    width: 290px;
+    height: 180px;
+    margin-top: 15px;
+}
+.swiper-slide img {
+    width: 290px;
+    height: 180px;
+}
+.swiper-container{
+    --swiper-theme-color:rgb(223, 221, 221);/* 设置Swiper风格 */ 
+}
+
+.header-account{
+    width: 100%;
+    background: #fff;
+    padding: 0 8px;
+}
+.header-account>h1 {
+    height: 47px;
+    font-size: 18px;
+    margin: 10px 0 0 0 ;
+    line-height: 47px;
+}
+.header-account-list {
+    border-top: 1px solid #ccc;
+}
+.header-account-list>a {
+    display: block;
+    height: 79px;
+    width: 100%;
+}
+.header-account-list img {
+    width: 68px;
+    height: 50px;
+    margin:15px 20px 0 11px;
+    float: left;
+}
+.account_title {
+    border: 1px solid transparent;
+    height: 85px;
+}
+.account_title>p {
+    font-size: 14px;
+    margin: 16px 0 5px;
+}
+.account_title>button {
+    width: 60px;
+    height: 27px;
+    background: #e3f0fc;
+    border: 0;
+    border-radius: 5px;
+}
+.accblog {
+    height: 46px;
+    padding-left: 11px;
+}
+.powerby {
+    margin-top: 20px;
+}
+.powerby p {
+    color: #ccc;
+    font-size: 12px;
+}
+.footop {
+    display: none;
+    position: fixed;
+    right: 60px;
+    bottom: 50px;
+}

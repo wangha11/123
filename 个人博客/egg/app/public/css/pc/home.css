@@ -1,0 +1,77 @@
+.header {
+    display: flex;
+}
+.header-left {
+    width: 955px;
+    margin-right: 15px;
+}
+.header-book {
+    width: 100%;
+}
+.header_book-title {
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+    margin: 15px 0 10px 0;
+    background: #fff;
+}
+.header_book-title>p {
+    font-size: 20px;
+    padding-left: 15px;
+    margin: 0;
+    color: #666;
+}
+.header_book-title>a {
+    color: #ccc;
+    font-size: 16px;
+    padding-right: 15px;
+}
+.header-book-list {
+    width: 100%;
+    height: 200px;
+    background: #fff;
+}
+.header-book-list>a {
+    display: block;
+    height: 200px;
+    width: 100%;
+}
+.book-list-a img {
+    width: 230px;
+    height: 150px;
+    margin: 25px 0 0 16px;
+    float: left;
+}
+.book_title {
+    float: left;
+    margin: 35px 0 0 25px;
+}
+.book_title>p {
+    font-size: 18px;
+}
+.book_title>span {
+    margin-top: 11px;
+    color: #ccc;
+}
+.book_title>button {
+    width: 86px;
+    height: 38px;
+    margin-top: 36px;
+    background: #e3f0fc;
+    border: 0;
+    border-radius: 5px;
+}
+.more {
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+    margin: 15px 0;
+    line-height: 50px;
+}
+.blog_html {
+    width: 100%;
+    height: 70px;
+    margin-top: 10px;
+    overflow: hidden;
+}

@@ -1,0 +1,29 @@
+{% extends "pc/layout.html"%} {% block content%}
+<link rel="stylesheet" href="/css/pc/book.css">
+<div class="header w">
+    <div class="header-left">
+        <!-- 精选手册模块 -->
+        <div class="header-book">
+           {% for item in bookaccList %}
+            <div class="header-book-list">
+                <a href="/book/{{item.id}}" class="book-list-a">
+                    <img src="{{item.img}}">
+                    <div class="book_title">
+                        <p>{{item.title}}</p>
+                        <span>{{item.createdAt | dateforame}}</span><br>
+                        <button>阅读</button>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="more">
+            更多内容敬请期待
+        </div>
+    </div>
+
+    <div class="header-right-sider">
+        {% include "./sider.html" ignore missing %}
+    </div>
+</div>
+{% endblock%}

@@ -46,7 +46,7 @@ class websiteService extends Service {
     async getBlogindex(){
         let bookList = await this.ctx.service.book.getBookList({total:3});
         let blogList = await this.ctx.service.blog.indexBlog({total:1});
-        let BlogaccList = await this.ctx.service.blog.indexBlog({total:100});
+        let BlogaccList = await this.ctx.service.blog.indexBlog({total:100,page:1});
         let title = "个人博客"
         return {
             bookList,

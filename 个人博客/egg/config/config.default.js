@@ -48,7 +48,6 @@ module.exports = appInfo => {
     username:'root',
     password:'123'
   };
-
   
   config.jwt = {
     secret: "wangha"//自定义 token 的加密条件字符串

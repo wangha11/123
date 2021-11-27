@@ -6,8 +6,10 @@ class BlogService extends Service {
     async indexBlog(query){
         try{
             const total = parseInt(query.total);
+            const number = parseInt(query.page);
+            const page = number * 10 - 10;
             const data = await this.ctx.model.Blog.findAll({
-                limit:[total]
+                limit:[total,page]
             })
             return data 
         }catch(e){
